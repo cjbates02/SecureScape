@@ -1,19 +1,33 @@
-from scapy.all import ARP, Ether, srp
 import ipaddress
 import socket
+import platform  # Import the platform module for OS detection
+
+# Checks the operating system
+if platform.system() == "Windows":
+    from scapy.all import ARP, Ether, srp
+elif platform.system() == "Darwin":  # macOS
+    try:
+        from scapy.layers.l2 import ARP, Ether
+        from scapy.sendrecv import srp
+    except ImportError:
+        print("Scapy is not installed. Please run 'pip install scapy' to install it.")
+        exit(1)
+else:
+    print("Unsupported operating system.")
+    exit(1)
 
 def get_local_ip_range():
-    #Function thats gets IP address and subnet mask of the machine that is running the program
+    # Function that gets IP address and subnet mask of the machine that is running the program
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
     network = ipaddress.IPv4Network(f"{local_ip}/24", strict=False)
     return network
 
 def arp_scan(ip):
-    #Function to perform ARP scan using scapy
-    #Scapy creates, sends, captures, and analyzes network packets
+    # Function to perform ARP scan using scapy
+    # Scapy creates, sends, captures, and analyzes network packets
     arp_request = ARP(pdst=str(ip))
-    ether_frame = Ether(dst="ff:ff:ff:ff:ff:ff")  #Broadcasting to all devices on the local network
+    ether_frame = Ether(dst="ff:ff:ff:ff:ff:ff")  # Broadcasting to all devices on the local network
     packet = ether_frame/arp_request
     result = srp(packet, timeout=3, verbose=0)[0]
     
@@ -24,7 +38,7 @@ def arp_scan(ip):
     return devices
 
 def print_result(devices):
-    #Print IP'S and MAC's
+    # Print IP's and MAC's
     for device in devices:
         print(f"IP: {device['ip']}\tMAC: {device['mac']}")
 
@@ -34,5 +48,3 @@ if __name__ == "__main__":
 
     devices_list = arp_scan(target_ip_range)
     print_result(devices_list)
-
-
