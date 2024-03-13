@@ -33,7 +33,7 @@ def get_vulnerbility_data():
         for row in csv_reader:
             data.append(row)
 
-    return json.dumps(data)
+    return json.dumps(data[::-1])
 
 
 

@@ -1,3 +1,4 @@
+
 /** TEST FUNCTIONS HERE TO ENSURE COMMUNICATION BETWEEN PYTHON AND JAVASCRIPT */
 
 // eel.expose(say_hello_js); // Expose this function to Python
@@ -25,14 +26,48 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("vulner-test").addEventListener("click", async () => { // ** ADD TOAST NOTIFICATION **
-    const jsonVulnerbilities = await eel.get_vulnerbility_data()(); // call python function to retrieve vulnerbility data
-    const parsedVulner = JSON.parse(jsonVulnerbilities); // converts string to JS objects
-    console.log(parsedVulner.slice(0, 10)); // temporary
-    renderVulnerbilities(parsedVulner.slice(0, 10));
+    try {
+      const jsonVulnerbilities = await eel.get_vulnerbility_data()(); // call python function to retrieve vulnerbility data
+      const parsedVulner = JSON.parse(jsonVulnerbilities); // converts string to JS object
+      console.log(parsedVulner.slice(0, 10)); // temporary
+      renderVulnerbilities(parsedVulner.slice(0, 10));
+      alertSuccess('Vulnerbilities Refreshed Successfully!')
+    } catch(error) {
+      alertError('Vulnerability Refresh Failed. Please try again.')
+    }
   });
 });
 
 /** Frontend functions */
+
+
+// diaplays success toast to user
+const alertSuccess = (message) => {
+  Toastify.toast({
+    text: message,
+    duration: 2000,
+    close: false,
+    style: {
+      background: 'green',
+      color: 'white',
+      textAlign: 'center'
+    }
+  })
+}
+
+// displayes error toast to user
+const alertError = (message) => {
+  Toastify.toast({
+    text: message,
+    duration: 2000,
+    close: false,
+    style: {
+      background: 'red',
+      color: 'white',
+      textAlign: 'center'
+    }
+  })
+}
 
 const renderVulnerbilities = (vulnerbilities) => {
   const vulnContainer = document.getElementById("vulnerbility-container"); // store the div that will hold vulnerbilities
