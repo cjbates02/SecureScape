@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
       renderVulnerbilities(parsedVulner.slice(0, 10));
       alertSuccess('Vulnerbilities Refreshed Successfully!')
     } catch(error) {
-      alertError('Vulnerability Refresh Failed. Please try again.')
+      alertError('Vulnerability Refresh Failed. Check your internet connection.')
+      console.log(error)
     }
   });
 });
