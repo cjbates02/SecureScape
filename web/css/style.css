@@ -75,11 +75,11 @@ body {
 .button-general {
   border: none;
   padding: 10px;
-  margin-top: 30px;
   border-radius: 15px;
   cursor: pointer;
   font-family: 'Outfit';
   color: grey;
+  margin: 20px;
 }
 
 .button-div {
@@ -112,3 +112,4 @@ body {
   border-radius: 15px;
   font-family: 'Outfit';
 }
+
