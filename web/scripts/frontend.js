@@ -18,38 +18,44 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   });
 
-  // Refreshes vulnerbilities
-  document.getElementById("vulner-test").addEventListener("click", async () => {
-    document.getElementById("load-more-vulner").disabled = false;
-    try {
-      vulners = await getVulnerbilities();
-      renderVulnerbilities(vulners, currentIndex);
-      alertSuccess("Vulnerbilities Refreshed Successfully!");
-    } catch (error) {
-      alertError(
-        "Vulnerability Refresh Failed. Check your internet connection."
-      );
-      console.log(error);
-    }
-  });
+  /** VULNERBILITY PAGE EVENT LISTENERS */
 
-  // Renders the next 10 vulnerbilities
-  document
-    .getElementById("load-more-vulner")
-    .addEventListener("click", async () => {
-      vulners = await getVulnerbilities();
-      currentIndex = currentIndex + 10;
-      renderVulnerbilities(vulners, currentIndex);
-    });
+  if (document.getElementById("vulnerability-page")) {
+    // Refreshes vulnerbilities
+    document
+      .getElementById("vulner-test")
+      .addEventListener("click", async () => {
+        document.getElementById("load-more-vulner").disabled = false;
+        try {
+          vulners = await getVulnerbilities();
+          renderVulnerbilities(vulners, currentIndex);
+          alertSuccess("Vulnerbilities Refreshed Successfully!");
+        } catch (error) {
+          alertError(
+            "Vulnerability Refresh Failed. Check your internet connection."
+          );
+          console.log(error);
+        }
+      });
 
-  // Renders previous 10 vulnerbilities
-  document
-    .getElementById("go-back-vulner")
-    .addEventListener("click", async () => {
-      vulners = await getVulnerbilities();
-      currentIndex = currentIndex - 10;
-      renderVulnerbilities(vulners, currentIndex);
-    });
+    // Renders the next 10 vulnerbilities
+    document
+      .getElementById("load-more-vulner")
+      .addEventListener("click", async () => {
+        vulners = await getVulnerbilities();
+        currentIndex = currentIndex + 10;
+        renderVulnerbilities(vulners, currentIndex);
+      });
+
+    // Renders previous 10 vulnerbilities
+    document
+      .getElementById("go-back-vulner")
+      .addEventListener("click", async () => {
+        vulners = await getVulnerbilities();
+        currentIndex = currentIndex - 10;
+        renderVulnerbilities(vulners, currentIndex);
+      });
+  }
 });
 
 /** EEL BACKEND FUNCTIONS */

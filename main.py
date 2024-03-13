@@ -7,15 +7,6 @@ from backend import arp_scan, cvescraper
 
 eel.init('web')
 
-""" TESTING PURPOSES """
-
-@eel.expose
-def say_hello_py(x):
-    print(f'Hello from {x}')
-
-say_hello_py('Python World') # call local function
-eel.say_hello_js('Python World') # call javaScript function
-
 
 """ BEGIN BACKEND FUNCTIONALITY HERE """
 
