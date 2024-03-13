@@ -1,0 +1,7 @@
+-- Make sure you have node js installed
+-- Create a python virtual environemnt using command: python -m venv <name of venv>
+-- Inside the venv clone the repository: git clone -b master https://github.com/cjbates02/SecureScape.git
+-- Install node modules, use command: npm install
+-- pip install eel
+-- pip install scapy
+-- To start up dev server run command: python main.py
