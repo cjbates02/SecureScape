@@ -1,6 +1,10 @@
 import json
-import nmap3
+import nmap3 # pip install python-3-nmap
 import os
+import logging
+
+# disable warning messages
+logging.getLogger("scapy").setLevel(logging.CRITICAL) 
 
 def read_ip_addresses_from_json(json_file):
     # Reads in JSON file containing IP addresses
