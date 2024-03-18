@@ -21,54 +21,46 @@
     <script src="scripts/frontend.js" defer></script>
     <title>SecureScape</title>
   </head>
-  <body id="vulnerability-page">
+  <body id="endpoints-page">
     <!-- Menu Starts Here -->
     <div class="home-page-grid">
       <section>
         <div class="menu">
-          <div id="home-page" class="menu-title is-size-4">
+          <p id="home-page" class="menu-title is-size-4">
             <span class="secure">Secure</span>
             <span class="scape">Scape</span>
-          </div>
-          <div
-            class="menu-item has-background-light"
-            id="vulnerbility-page-btn"
-          >
+          </p>
+          <div class="menu-item" id="vulnerbility-page-btn">
             <p>Vulnerabilities</p>
           </div>
-          <div class="menu-item" id="endpoint-page-btn">
+          <div class="menu-item has-background-light" id="endpoint-page-btn">
             <p>Endpoints</p>
           </div>
         </div>
       </section>
-
       <!-- Main Section Starts Here -->
       <section>
         <div class="home-network-grid">
           <div class="header-bar"></div>
-          <!-- Content goes in the main section div -->
           <div class="main-section">
             <div class="button-div">
-              <button class="button-general" id="vulner-test">
-                Refresh Vulnerbilities
+              <button class="button-general" id="refresh-endpoints-btn">
+                Refresh Endpoints
               </button>
             </div>
-            <!-- Headers for vulnerbility grid -->
-            <div class="vulnerability-header has-background-light">
-              <div class="vulnerability-attribute">CVE ID</div>
-              <div class="vulnerability-attribute">Name</div>
-              <div class="vulnerability-attribute">Date Added</div>
+            <div class="loading-div">
+              <img
+                class="loading-logo"
+                id="loading-icon"
+                src="./img/loading-icon.svg"
+                hidden
+              />
             </div>
-            <!-- Render vulnerbility attributes in JS file -->
-            <div
-              class="vulnerbility-container has-background-light"
-              id="vulnerbility-container"
-            ></div>
-            <div class="button-div">
-              <button id="go-back-vulner" class="button-general">
-                Go Back
-              </button>
-              <button id="load-more-vulner" class="button-general">Next</button>
+            <div class="root-pw-input-div" id="root-pw-form">
+              <img id="cancel-scan" class="close-icon" src="./img/close.png" />
+              <label class="labe pw-label">Enter your root password:</label>
+              <input class="pw-input" type="password" id="sudo-pw" />
+              <button class="button-general" id="root-submit">Submit</button>
             </div>
           </div>
         </div>

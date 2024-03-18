@@ -10,6 +10,7 @@
 .home-page-grid {
   display: grid;
   grid-template-columns: 25% 75%;
+  height: 100%;
 }
 
 .menu {
@@ -18,7 +19,8 @@
   grid-template-columns: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 20% 20% 20%;
+  grid-template-rows: 8% 8% 8%;
+  padding-top: 75px;
 }
 
 .menu-item {
@@ -49,9 +51,9 @@
 }
 
 .menu-title {
+  margin-bottom: 75px;
   color: white;
   text-align: center;
-  padding-top: 75px;
   font-family: 'Outfit';
   cursor: pointer;
   height: 100px;
@@ -113,3 +115,51 @@ body {
   font-family: 'Outfit';
 }
 
+
+.loading-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.loading-div {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.root-pw-input-div {
+  position: relative;
+  display: none;
+  grid-template-columns: auto;
+  margin: auto;
+  justify-content: center;
+  width: 15rem;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+.pw-label {
+  color: rgb(103, 102, 102);
+  font-family: 'Outfit';
+}
+
+.pw-input {
+  border-radius: 5px;
+  border: none;
+}
+
+.close-icon {
+  position absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  margin-left: -27px;
+  cursor: pointer;
+}
+
+.root {
+  margin: auto;
+}

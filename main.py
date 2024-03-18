@@ -3,7 +3,16 @@ import eel.browsers
 import os
 import csv
 import json
-from backend import arp_scan, cvescraper
+import platform
+import subprocess
+import asyncio
+import tracemalloc
+
+# Enable tracemalloc
+tracemalloc.start()
+
+from backend import cvescraper, nmap_scan, arp_scan
+
 
 eel.init('web')
 
@@ -24,8 +33,44 @@ def get_vulnerbility_data():
         for row in csv_reader:
             data.append(row)
 
-    print(len(data))
     return json.dumps(data[::-1])
+
+@eel.expose
+def get_endpoints_data(password):
+   
+    try:
+        command = ['sudo', '-S', '-k', 'python', './backend/arp_scan.py']
+        # Pass the password to sudo through stdin
+        subprocess.run(command, input=password.encode(), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    except Exception as e:
+        return 1
+        
+    
+    # Call the asynchronous function 'arp_scan_and_nmap'
+    nmap_scan.arp_scan_and_nmap()
+
+    # Load data from 'output.json' file
+    with open('output.json', 'r') as f:
+        data = json.load(f)
+    
+    os.remove('output.json')
+    os.remove('ip_addresses.json')
+
+    # Return the JSON data as a string
+    return json.dumps(data)
+
+
+# TODO 
+# - STORE ENDPOINTS IN SQL DATABASE
+# - VISUALIZE ENDPOINTS, IMPLEMENT ENDPOINT FUNCTIONS
+# - GET MAC ADDRESSES
+# - DOCUMENT CODE SO FAR
+# - TEST ON WINDOWS
+# - GENERATE NETWORK DIAGRAM
+
+        
+
+
 
 
 

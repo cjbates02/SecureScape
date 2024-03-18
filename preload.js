@@ -1,5 +1,3 @@
-
-
 const { contextBridge } = require("electron");
 const Toastify = require("toastify-js");
 

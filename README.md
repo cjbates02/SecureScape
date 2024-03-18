@@ -5,3 +5,4 @@
 -- pip install eel
 -- pip install scapy
 -- To start up dev server run command: python main.py
+-- Not for commercial use

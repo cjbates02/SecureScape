@@ -4,6 +4,8 @@ let currentIndex = 0;
 
 /** EVENT LISTENERS */
 
+/** EVENT LISTNERS TO RENDER NEW HTML PAGES */
+
 // Listens for the event that all the DOM content is loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Renders the vulnerbility page
@@ -16,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render's index html page
   document.getElementById("home-page").addEventListener("click", () => {
     window.location.href = "index.html";
+  });
+
+  // Render endpoint page
+  document.getElementById("endpoint-page-btn").addEventListener("click", () => {
+    window.location.href = "endpoints.html";
   });
 
   /** VULNERBILITY PAGE EVENT LISTENERS */
@@ -56,9 +63,55 @@ document.addEventListener("DOMContentLoaded", () => {
         renderVulnerbilities(vulners, currentIndex);
       });
   }
+
+  /** ENDPOINT PAGE EVENT LISTENERS */
+
+  // Renders the root password div if the users clicks  hte refresh endpoints buttin
+  if (document.getElementById("endpoints-page")) {
+    document
+      .getElementById("refresh-endpoints-btn")
+      .addEventListener("click", () => {
+        document.getElementById("root-pw-form").style.display = "grid";
+      });
+
+    // Handles click event of close button on the root pw div
+    document.getElementById("cancel-scan").addEventListener("click", () => {
+      alertError("Scan cancelled.");
+      document.getElementById("sudo-pw").value = "";
+      document.getElementById("root-pw-form").style.display = "none";
+    });
+
+    // Handles the click event of the root pw submission
+    document.getElementById("root-submit").addEventListener("click", () => {
+      const password = document.getElementById("sudo-pw").value;
+      document.getElementById("sudo-pw").value = "";
+      document.getElementById("root-pw-form").style.display = "none";
+      getEndpoints(password);
+    });
+  }
 });
 
 /** EEL BACKEND FUNCTIONS */
+
+// Returns all endpoints on a network
+const getEndpoints = async (password) => {
+  document.getElementById("sudo-pw").value = ""; // Removes the password input
+  if (password === null) { 
+    alertError("Scan cancelled password empty.");
+  } else {
+    document.getElementById("loading-icon").hidden = false; // Renders loading icon
+    const endpoints = await eel.get_endpoints_data(password)(); // Call backend for endpoint information
+    if (endpoints !== 1) { // If there were no errors in the backend
+      const parsedEndpoints = JSON.parse(endpoints); // Parse the json file into  a js object
+      console.log(parsedEndpoints); 
+      document.getElementById("loading-icon").hidden = true; // Hide the loading icon
+      alertSuccess("Completed network scan!"); // Notify user of success
+    } else { // If password was incorrect
+      document.getElementById("loading-icon").hidden = true;
+      alertError("Incorrect root password.");
+    }
+  }
+};
 
 // Returns all vulnerbilities from python
 const getVulnerbilities = async () => {
@@ -70,6 +123,7 @@ const getVulnerbilities = async () => {
 /** FRONTEND FUNCTIONS */
 
 // displays success toast to user
+
 const alertSuccess = (message) => {
   Toastify.toast({
     text: message,
@@ -84,6 +138,7 @@ const alertSuccess = (message) => {
 };
 
 // displayes error toast to user
+
 const alertError = (message) => {
   Toastify.toast({
     text: message,

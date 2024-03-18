@@ -13,9 +13,6 @@ def read_ip_addresses_from_json(json_file):
         return data
 
 def arp_scan_and_nmap():
-    # Run arp_scan to generate IP addresses JSON file
-    os.system("python arp_scan.py")
-
     # Read IP addresses from the generated JSON file
     ips = read_ip_addresses_from_json("ip_addresses.json")
     if not ips:

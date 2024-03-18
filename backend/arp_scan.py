@@ -19,7 +19,7 @@ elif platform.system() == "Darwin":  # macOS
         print("Scapy is not installed. Please run 'pip install scapy' to install it.")
         exit(1)
     # Find active network interface on macOS
-    interface = 'en0' # Select the first active interface
+    interface = conf.iface # Select the first active interface
 else:
     print("Unsupported operating system.")
     exit(1)
@@ -33,6 +33,7 @@ def get_local_ip_range():
 def arp_scan(ip, interface=None):
     # Function to perform ARP scan using scapy
     # Scapy creates, sends, captures, and analyzes network packets
+
     arp_request = ARP(pdst=str(ip))
     ether_frame = Ether(dst="ff:ff:ff:ff:ff:ff")
     packet = ether_frame/arp_request
@@ -48,12 +49,15 @@ def arp_scan(ip, interface=None):
         print(f"Error occurred during ARP scan: {e}")
         return []
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     target_ip_range = get_local_ip_range()
 
     print(target_ip_range)
 
     devices_list = arp_scan(target_ip_range, interface)
+    devices_list.append(get_if_addr(conf.iface))
+    print(devices_list)
     
     # Write the list of IP addresses to a JSON file
     with open("ip_addresses.json", "w") as f:
