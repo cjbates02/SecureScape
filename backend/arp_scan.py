@@ -10,7 +10,7 @@ logging.getLogger("scapy").setLevel(logging.CRITICAL)
 
 # Check the operating system
 if platform.system() == "Windows":
-    from scapy.all import ARP, Ether, srp
+    from scapy.all import *
     interface = None  # Use default interface for Windows
 elif platform.system() == "Darwin":  # macOS
     try:
