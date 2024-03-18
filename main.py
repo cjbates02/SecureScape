@@ -37,13 +37,19 @@ def get_vulnerbility_data():
 
 @eel.expose
 def get_endpoints_data(password):
-   
-    try:
-        command = ['sudo', '-S', '-k', 'python', './backend/arp_scan.py']
-        # Pass the password to sudo through stdin
-        subprocess.run(command, input=password.encode(), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    except Exception as e:
-        return 1
+    if platform.system() == 'Windows':
+        try:
+            command = ['python', './backend/arp_scan.py']
+            subprocess.run(command, input=password.encode(), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        except Exception as e:
+            return 1
+    else:
+        try:
+            command = ['sudo', '-S', '-k', 'python', './backend/arp_scan.py']
+            # Pass the password to sudo through stdin
+            subprocess.run(command, input=password.encode(), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        except Exception as e:
+            return 1
         
     
     # Call the asynchronous function 'arp_scan_and_nmap'
