@@ -2,6 +2,1291 @@
 
 let currentIndex = 0;
 
+// development puposes delete later
+const testEndpoint = {
+  "192.168.1.1": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "open",
+      reason: "syn-ack",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "open",
+      reason: "syn-ack",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.2": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.35": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.38": [],
+  "192.168.1.3": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "filtered",
+      reason: "no-response",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.21": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.50": [],
+  "192.168.1.29": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "open",
+      reason: "syn-ack",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "open",
+      reason: "syn-ack",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.108": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "open",
+      reason: "syn-ack",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "open",
+      reason: "syn-ack",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.250": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "open",
+      reason: "syn-ack",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+  "192.168.1.148": [],
+  "192.168.1.39": [
+    {
+      protocol: "tcp",
+      portid: "21",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ftp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "22",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ssh",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "23",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "telnet",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "25",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "smtp",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "80",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "http",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "110",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "pop3",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "139",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "netbios-ssn",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "443",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "https",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "445",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "microsoft-ds",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+    {
+      protocol: "tcp",
+      portid: "3389",
+      state: "closed",
+      reason: "conn-refused",
+      reason_ttl: "0",
+      service: {
+        name: "ms-wbt-server",
+        method: "table",
+        conf: "3",
+      },
+      cpe: [],
+      scripts: [],
+    },
+  ],
+};
+
 /** EVENT LISTENERS */
 
 /** EVENT LISTNERS TO RENDER NEW HTML PAGES */
@@ -23,102 +1308,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render endpoint page
   document.getElementById("endpoint-page-btn").addEventListener("click", () => {
     window.location.href = "endpoints.html";
+    
   });
-
-  /** VULNERBILITY PAGE EVENT LISTENERS */
-
-  if (document.getElementById("vulnerability-page")) {
-    // Refreshes vulnerbilities
-    document
-      .getElementById("vulner-test")
-      .addEventListener("click", async () => {
-        document.getElementById("load-more-vulner").disabled = false;
-        try {
-          vulners = await getVulnerbilities();
-          renderVulnerbilities(vulners, currentIndex);
-          alertSuccess("Vulnerbilities Refreshed Successfully!");
-        } catch (error) {
-          alertError(
-            "Vulnerability Refresh Failed. Check your internet connection."
-          );
-          console.log(error);
-        }
-      });
-
-    // Renders the next 10 vulnerbilities
-    document
-      .getElementById("load-more-vulner")
-      .addEventListener("click", async () => {
-        vulners = await getVulnerbilities();
-        currentIndex = currentIndex + 10;
-        renderVulnerbilities(vulners, currentIndex);
-      });
-
-    // Renders previous 10 vulnerbilities
-    document
-      .getElementById("go-back-vulner")
-      .addEventListener("click", async () => {
-        vulners = await getVulnerbilities();
-        currentIndex = currentIndex - 10;
-        renderVulnerbilities(vulners, currentIndex);
-      });
-  }
-
-  /** ENDPOINT PAGE EVENT LISTENERS */
-
-  // Renders the root password div if the users clicks  hte refresh endpoints buttin
-  if (document.getElementById("endpoints-page")) {
-    document
-      .getElementById("refresh-endpoints-btn")
-      .addEventListener("click", () => {
-        document.getElementById("root-pw-form").style.display = "grid";
-      });
-
-    // Handles click event of close button on the root pw div
-    document.getElementById("cancel-scan").addEventListener("click", () => {
-      alertError("Scan cancelled.");
-      document.getElementById("sudo-pw").value = "";
-      document.getElementById("root-pw-form").style.display = "none";
-    });
-
-    // Handles the click event of the root pw submission
-    document.getElementById("root-submit").addEventListener("click", () => {
-      const password = document.getElementById("sudo-pw").value;
-      document.getElementById("sudo-pw").value = "";
-      document.getElementById("root-pw-form").style.display = "none";
-      getEndpoints(password);
-    });
-  }
 });
 
 /** EEL BACKEND FUNCTIONS */
-
-// Returns all endpoints on a network
-const getEndpoints = async (password) => {
-  document.getElementById("sudo-pw").value = ""; // Removes the password input
-  if (password === null) { 
-    alertError("Scan cancelled password empty.");
-  } else {
-    document.getElementById("loading-icon").hidden = false; // Renders loading icon
-    const endpoints = await eel.get_endpoints_data(password)(); // Call backend for endpoint information
-    if (endpoints !== 1) { // If there were no errors in the backend
-      const parsedEndpoints = JSON.parse(endpoints); // Parse the json file into  a js object
-      console.log(parsedEndpoints); 
-      document.getElementById("loading-icon").hidden = true; // Hide the loading icon
-      alertSuccess("Completed network scan!"); // Notify user of success
-    } else { // If password was incorrect
-      document.getElementById("loading-icon").hidden = true;
-      alertError("Incorrect root password.");
-    }
-  }
-};
-
-// Returns all vulnerbilities from python
-const getVulnerbilities = async () => {
-  const jsonVulnerbilities = await eel.get_vulnerbility_data()(); // call python function to retrieve vulnerbility data
-  const parsedVulner = JSON.parse(jsonVulnerbilities); // converts string to JS object
-  return parsedVulner;
-};
 
 /** FRONTEND FUNCTIONS */
 
@@ -150,48 +1344,6 @@ const alertError = (message) => {
       textAlign: "center",
     },
   });
-};
-
-// Renders vulnerbilities to user
-const renderVulnerbilities = (vulnerbilities, index) => {
-  const vulnContainer = document.getElementById("vulnerbility-container"); // store the div that will hold vulnerbilities
-  vulnContainer.innerHTML = ""; // clear the current content
-  limit = index + 10; // render 10 more
-
-  // Limit check to disable buttons if vulnerbility index is out of range
-  if (index >= vulners.length - 10) {
-    limit = vulnerbilities.length - index + index;
-    document.getElementById("load-more-vulner").disabled = true;
-  } else {
-    document.getElementById("load-more-vulner").disabled = false;
-  }
-
-  if (index === 0) {
-    document.getElementById("go-back-vulner").disabled = true;
-  } else {
-    document.getElementById("go-back-vulner").disabled = false;
-  }
-
-  // iterate through each vulnerbility rendering the data
-  for (let i = index; i < limit; i++) {
-    const currentVuln = vulnerbilities[i];
-
-    const idDiv = document.createElement("div");
-    idDiv.className = "vulnerability-attribute";
-    idDiv.innerHTML = `<div>${currentVuln.cveID}</div>`;
-
-    const nameDiv = document.createElement("div");
-    nameDiv.className = "vulnerability-attribute";
-    nameDiv.innerHTML = `<div>${currentVuln.vulnerabilityName}</div>`;
-
-    const dateDiv = document.createElement("div");
-    dateDiv.className = "vulnerability-attribute";
-    dateDiv.innerHTML = `<div>${currentVuln.dateAdded}</div>`;
-
-    vulnContainer.appendChild(idDiv);
-    vulnContainer.appendChild(nameDiv);
-    vulnContainer.appendChild(dateDiv);
-  }
 };
 
 /** Vulnerbiliter object structure (for reference only) */

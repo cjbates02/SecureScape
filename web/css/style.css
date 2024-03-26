@@ -150,9 +150,6 @@ body {
 }
 
 .close-icon {
-  position absolute;
-  top: 0;
-  left: 0;
   height: 20px;
   width: 20px;
   padding: 5px;
@@ -162,4 +159,39 @@ body {
 
 .root {
   margin: auto;
+}
+
+.endpoint-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  margin: auto;
+  justify-content: center;
+}
+
+.endpoint-card {
+  background-color: white;
+  border-radius: 15px;
+  color: black;
+  font-family: 'Outfit';
+  margin: 10px;
+  padding: 10px;
+}
+
+.port-container {
+  display: grid;
+  grid-template-columns: 25% 40% 35%;
+  padding-top : 10px;
+}
+
+.network-diagram {
+  height: 700px;
+  width: 700px;
+  background-color: white;
+}
+
+.network-diagram-div {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-bottom: 150px;
 }

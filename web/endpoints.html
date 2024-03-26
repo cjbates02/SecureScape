@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="/eel.js"></script>
     <script src="scripts/frontend.js" defer></script>
+    <script src="scripts/endpoint.js" defer></script>
     <title>SecureScape</title>
   </head>
   <body id="endpoints-page">
@@ -48,6 +49,7 @@
                 Refresh Endpoints
               </button>
             </div>
+            <!-- Loading icon that renders while network refresh is occuring -->
             <div class="loading-div">
               <img
                 class="loading-logo"
@@ -56,11 +58,22 @@
                 hidden
               />
             </div>
+            <!-- Conditionally prompts user to enter root password hidden on startup -->
             <div class="root-pw-input-div" id="root-pw-form">
               <img id="cancel-scan" class="close-icon" src="./img/close.png" />
-              <label class="labe pw-label">Enter your root password:</label>
+              <label class="label pw-label">Enter your root password:</label>
               <input class="pw-input" type="password" id="sudo-pw" />
               <button class="button-general" id="root-submit">Submit</button>
+            </div>
+
+            <!-- Endpoint card -->
+            <div class="endpoint-container" id="endpoint-container">
+              <!-- Header for endpoint card -->
+              <!-- Port information -->
+            </div>
+            <div class="button-div">
+              <button id="load-less-end" class="button-general" disabled>Go Back</button>
+              <button id="load-more-end" class="button-general" disabled>Next</button>
             </div>
           </div>
         </div>

@@ -19,9 +19,13 @@
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="/eel.js"></script>
     <script src="scripts/frontend.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/endpoint.js" defer></script>
+    <script src="scripts/d3/d3.js" defer></script>
+    <script src="scripts/d3/d3-force.js" defer></script>
     <title>SecureScape</title>
   </head>
-  <body>
+  <body id="main-page">
     <!-- Menu Starts Here -->
     <div class="home-page-grid">
       <section>
@@ -42,7 +46,33 @@
       <section>
         <div class="home-network-grid">
           <div class="header-bar"></div>
-          <div class="main-section"></div>
+          <div class="main-section">
+            <div class="button-div">
+              <button class="button-general" id="network-map-btn">
+                Generate Network Map
+              </button>
+            </div>
+
+            <!-- Loading icon that renders while network refresh is occuring -->
+            <div class="loading-div">
+              <img
+                class="loading-logo"
+                id="loading-icon"
+                src="./img/loading-icon.svg"
+                hidden
+              />
+            </div>
+            <!-- Conditionally render for user root password input -->
+            <div class="root-pw-input-div" id="root-pw-form">
+              <img id="cancel-scan" class="close-icon" src="./img/close.png" />
+              <label class="labe pw-label">Enter your root password:</label>
+              <input class="pw-input" type="password" id="sudo-pw" />
+              <button class="button-general" id="root-submit">Submit</button>
+            </div>
+            <div class="network-diagram-div">
+              <svg class="network-diagram" id="network-diagram"></svg>
+            </div>
+          </div>
         </div>
       </section>
     </div>

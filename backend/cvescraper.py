@@ -15,7 +15,6 @@ def initialScrape():
     Vulnerabilities database and saves it into a CSV file
     '''
     url = "https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv"
-
     response = requests.get(url)
 
     '''
@@ -26,12 +25,13 @@ def initialScrape():
 
         with open("data.csv", "wb") as f:
             f.write(response.content)
-        print("File downloaded successfully.")
+        
+        currentScrape('data.csv')
+        # print("File downloaded successfully.")
 
     else:
         print(f"Error: Failed to download file. Status code: {response.status_code}")
     
-    currentScrape('data.csv')
 
 
 def currentScrape(filename):
@@ -66,4 +66,4 @@ def currentScrape(filename):
             
         os.remove('data.csv')
         os.rename('newdata.csv', 'data.csv')
-        print("File Parsed!")
+        # print("File Parsed!")
