@@ -1,7 +1,7 @@
 import ipaddress
 import socket
 import platform
-import psutil  # Import psutil to get network interface information
+#import psutil  # Import psutil to get network interface information
 import json
 import logging
 
@@ -51,14 +51,16 @@ def arp_scan(ip, interface=None):
         return []
 
 
-if __name__ == '__main__':
+def arp_main():
     target_ip_range = get_local_ip_range()
-
-    print(target_ip_range)
     devices_list = arp_scan(target_ip_range, interface)
     devices_list.append(get_if_addr(conf.iface))
-    print(devices_list)
-    
-    # Write the list of IP addresses to a JSON file
+    with open("ip_addresses.json", "w") as f:
+        json.dump(devices_list, f)
+
+if __name__ == "__main__":
+    target_ip_range = get_local_ip_range()
+    devices_list = arp_scan(target_ip_range, interface)
+    devices_list.append(get_if_addr(conf.iface))
     with open("ip_addresses.json", "w") as f:
         json.dump(devices_list, f)

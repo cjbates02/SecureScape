@@ -4,3 +4,11 @@ include/
 bin/
 backend/__pycache__
 pyvenv.cfg
+Include/
+Lib/
+Scripts/
+data.csv
+share/
+output.json
+pyvenv.cfg
+

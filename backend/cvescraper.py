@@ -1,3 +1,4 @@
+
 import csv
 import requests
 from datetime import datetime
@@ -43,7 +44,7 @@ def currentScrape(filename):
 
     check_date = datetime.strptime("2024-01-01", "%Y-%m-%d")
 
-    with open(filename, "r") as csv_file:
+    with open(filename, "r", errors="ignore") as csv_file:
         csv_reader = csv.DictReader(csv_file)
 
         selected_data = []
@@ -65,5 +66,4 @@ def currentScrape(filename):
             writer.writerow(row)
             
         os.remove('data.csv')
-        os.rename('newdata.csv', 'data.csv')
         # print("File Parsed!")
