@@ -27,6 +27,7 @@ else:
 def get_local_ip_range():
     # Function that gets IP address and subnet mask of the machine that is running the program
     local_ip = get_if_addr(conf.iface)
+    print(local_ip)
     network = ipaddress.IPv4Network(f"{local_ip}/24", strict=False) # assuming everyone's subnet mask is /24
     return network
 
@@ -54,7 +55,6 @@ if __name__ == '__main__':
     target_ip_range = get_local_ip_range()
 
     print(target_ip_range)
-
     devices_list = arp_scan(target_ip_range, interface)
     devices_list.append(get_if_addr(conf.iface))
     print(devices_list)

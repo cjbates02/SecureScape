@@ -84,7 +84,7 @@ const positionNodes = (nodes, links) => {
       "link",
       d3.forceLink(links).id((d) => d.id)
     )
-    .force("collide", d3.forceCollide().radius(20))
+    .force("collide", d3.forceCollide().radius(60))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(700 / 2, 500 / 2))
     .on("tick", () => {
