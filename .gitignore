@@ -4,3 +4,8 @@ include/
 bin/
 backend/__pycache__
 pyvenv.cfg
+Lib/
+Include/
+Scripts/
+Share/
+

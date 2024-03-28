@@ -1,7 +1,7 @@
 import ipaddress
 import socket
 import platform
-import psutil  # Import psutil to get network interface information
+#import psutil  # Import psutil to get network interface information
 import json
 import logging
 

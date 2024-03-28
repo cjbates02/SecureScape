@@ -27,11 +27,13 @@ eel.init('web')
 def get_vulnerbility_data():
     cvescraper.initialScrape()
     data = []
+    os.rename('newdata.csv', 'data.csv')
 
     with open('data.csv', 'r', errors='ignore') as csv_vulnerbilities:
         csv_reader = csv.DictReader(csv_vulnerbilities)
         for row in csv_reader:
             data.append(row)
+
 
     return json.dumps(data[::-1])
 
@@ -77,7 +79,7 @@ def get_endpoints_data(password):
 
 
 
-if platform.system == 'Windows':
+if platform.system() == 'Windows':
     eel.browsers.set_path('electron', 'node_modules\electron\dist\electron.exe')
 else:
     eel.browsers.set_path('electron', 'node_modules/.bin/electron')
