@@ -44,7 +44,7 @@ const processNetworkData = (endpoints) => {
 
   const endpointNodes = [];
 
-  for (let i = 0; i < endpointKeys.length; i++) {
+  for (let i = 0; i < endpointKeys.length; i++) { 
     const endpointIp = endpointKeys[i];
     for (let j = 0; j < endpointValues[i].length; j++) {
       const currentEndpointValue = endpointValues[i][j];
@@ -72,11 +72,14 @@ const generateLinks = (nodes) => {
 };
 
 const positionNodes = (nodes, links) => {
+  const width = 700;
+  const height = 700;
+
   const svg = d3
     .select(".network-diagram")
     .append("svg")
-    .attr("width", 700)
-    .attr("height", 400);
+    .attr("width", width)
+    .attr("height", height);
 
   const simulation = d3
     .forceSimulation(nodes)
@@ -84,9 +87,9 @@ const positionNodes = (nodes, links) => {
       "link",
       d3.forceLink(links).id((d) => d.id)
     )
-    .force("collide", d3.forceCollide().radius(60))
+    .force("center", d3.forceCenter(width / 2, height / 2).strength(0.1))
+    .force("collide", d3.forceCollide().radius(125).strength(0.02))
     .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(700 / 2, 500 / 2))
     .on("tick", () => {
       drawNetwork(svg, nodes, links);
     });
@@ -116,5 +119,5 @@ const drawNetwork = (svg, nodes, links) => {
     .attr("cx", (d) => d.x)
     .attr("cy", (d) => d.y)
     .attr("r", 10)
-    .attr("fill", "blue");
+    .attr("fill", "white");
 };

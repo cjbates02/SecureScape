@@ -186,7 +186,7 @@ body {
 .network-diagram {
   height: 700px;
   width: 700px;
-  background-color: white;
+  padding: auto;
 }
 
 .network-diagram-div {

@@ -72,4 +72,5 @@ if __name__ == '__main__':
     
     # Write the list of IP addresses to a JSON file
     with open("ip_addresses.json", "w") as f:
+        # json.dump(devices_list[:10], f) ### DEV PURPOSES COMMENT OUT ###
         json.dump(devices_list, f)
