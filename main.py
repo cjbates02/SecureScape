@@ -28,7 +28,7 @@ def get_vulnerbility_data():
     cvescraper.initialScrape()
     data = []
 
-    with open('data.csv', 'r') as csv_vulnerbilities:
+    with open('data.csv', 'r', errors='ignore') as csv_vulnerbilities:
         csv_reader = csv.DictReader(csv_vulnerbilities)
         for row in csv_reader:
             data.append(row)
@@ -39,8 +39,7 @@ def get_vulnerbility_data():
 def get_endpoints_data(password):
     if platform.system() == 'Windows':
         try:
-            command = ['python', './backend/arp_scan.py']
-            subprocess.run(command, input=password.encode(), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            arp_scan.arp_main()
         except Exception as e:
             return 1
     else:
@@ -78,11 +77,10 @@ def get_endpoints_data(password):
 
 
 
-
-
-
-
-eel.browsers.set_path('electron', 'node_modules/.bin/electron') # set browser path for electron mode in eel to the binary executable due to permissions issue on mac
+if platform.system == 'Windows':
+    eel.browsers.set_path('electron', 'node_modules\electron\dist\electron.exe')
+else:
+    eel.browsers.set_path('electron', 'node_modules/.bin/electron')
 
 eel.start('index.html', mode='electron') # start up the desktop application using electron
 
