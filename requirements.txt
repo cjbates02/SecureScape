@@ -1,0 +1,5 @@
+eel
+python3-nmap
+requests
+scapy
+

@@ -77,16 +77,14 @@ const getEndpoints = async (password) => {
 };
 
 const renderEndpointData = (endpoints, index) => {
-  let endpointKeys = Object.keys(endpoints);
-  let endpointValues = Object.values(endpoints);
   let portElements = ``;
   limit = index + 6;
   endpointContainer = document.getElementById("endpoint-container");
   endpointContainer.innerHTML = "";
 
   // Limit check to disable buttons if endpoint index is out of range
-  if (index >= endpointKeys.length - 6) {
-    limit = endpointKeys.length - index + index;
+  if (index >= endpoints.length - 6) {
+    limit = endpoints.length - index + index;
     document.getElementById("load-more-end").disabled = true;
   } else {
     document.getElementById("load-more-end").disabled = false;
@@ -98,14 +96,18 @@ const renderEndpointData = (endpoints, index) => {
     document.getElementById("load-less-end").disabled = false;
   }
 
-  for (let i = index; i < limit; i++) {
-    const endpointIp = endpointKeys[i];
-    for (let j = 0; j < endpointValues[i].length; j++) {
-      const currentEndpointValue = endpointValues[i][j];
+  for (i = index; i < limit; i++) {
+    const currentEndpoint = endpoints[i];
 
-      const portNumber = currentEndpointValue.portid;
-      const serviceName = currentEndpointValue.service.name;
-      const state = currentEndpointValue.state;
+    const ip = currentEndpoint.ip;
+    const mac = currentEndpoint.mac;
+    const hostname = currentEndpoint.hostname;
+    const ports = currentEndpoint.ports;
+
+    ports.forEach((p) => {
+      const portNumber = p.portid;
+      const serviceName = p.service.name;
+      const state = p.state;
 
       const portElement = `
             <p>${portNumber}</p>
@@ -113,19 +115,21 @@ const renderEndpointData = (endpoints, index) => {
             <p class="has-text-right">${state}</p>
         `;
       portElements += portElement;
-    }
-    // call html template function here
+    });
+
     const endpointElement = elementFromHtml(`
-          <div class="endpoint-card">
-            <p class="has-text-centered">${endpointIp}</p>
-            <div class="port-container">
-              ${portElements}
-            </div>
-          </div>
-      `);
+    <div class="endpoint-card">
+      <p class="has-text-centered">${ip}</p>
+      <p class="has-text-centered">${mac}</p>
+      <div class="port-container">
+        ${portElements}
+      </div>
+    </div>
+    `);
 
     endpointContainer.appendChild(endpointElement);
     portElements = ``;
+
   }
 };
 

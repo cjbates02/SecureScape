@@ -44,7 +44,7 @@ const processNetworkData = (endpoints) => {
 
   const endpointNodes = [];
 
-  for (let i = 0; i < endpointKeys.length; i++) { 
+  for (let i = 0; i < endpointKeys.length; i++) {
     const endpointIp = endpointKeys[i];
     for (let j = 0; j < endpointValues[i].length; j++) {
       const currentEndpointValue = endpointValues[i][j];
@@ -85,11 +85,14 @@ const positionNodes = (nodes, links) => {
     .forceSimulation(nodes)
     .force(
       "link",
-      d3.forceLink(links).id((d) => d.id)
+      d3
+        .forceLink(links)
+        .id((d) => d.id)
+        .distance(100)
     )
-    .force("center", d3.forceCenter(width / 2, height / 2).strength(0.1))
-    .force("collide", d3.forceCollide().radius(125).strength(0.02))
-    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2).strength(0.5))
+    //.force("collide", d3.forceCollide().radius(100).strength(0.1))
+    .force("charge", d3.forceManyBody().distanceMin(2))
     .on("tick", () => {
       drawNetwork(svg, nodes, links);
     });

@@ -44,8 +44,12 @@ def arp_scan(ip, interface=None):
             result = srp(packet, timeout=3, verbose=0, iface=interface)[0]
         else:
             result = srp(packet, timeout=3, verbose=0)[0]
-        devices = [received.psrc for sent, received in result]
+        devices = []
+        for sent, received in result:
+            devices.append([received.psrc, received.hwsrc])
         return devices
+    
+
     except Exception as e:
         print(f"Error occurred during ARP scan: {e}")
         return []
@@ -72,5 +76,5 @@ if __name__ == '__main__':
     
     # Write the list of IP addresses to a JSON file
     with open("ip_addresses.json", "w") as f:
-        # json.dump(devices_list[:10], f) ### DEV PURPOSES COMMENT OUT ###
-        json.dump(devices_list, f)
+        json.dump(devices_list[:10], f) ### DEV PURPOSES COMMENT OUT ###
+        # json.dump(devices_list, f)

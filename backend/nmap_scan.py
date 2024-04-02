@@ -2,9 +2,14 @@ import json
 import nmap3 # pip install python-3-nmap
 import os
 import logging
+import platform
+import socket
+
 
 # disable warning messages
 logging.getLogger("scapy").setLevel(logging.CRITICAL) 
+
+from scapy.all import get_if_addr, conf, get_if_hwaddr
 
 def read_ip_addresses_from_json(json_file):
     # Reads in JSON file containing IP addresses
@@ -12,20 +17,42 @@ def read_ip_addresses_from_json(json_file):
         data = json.load(f)
         return data
 
+def get_host_name(ip):
+    try:
+        hostname = socket.gethostbyaddr(ip)
+        return hostname
+    except Exception as e:
+        return 'Hostname not found'
+
+
 def arp_scan_and_nmap():
     # Read IP addresses from the generated JSON file
-    ips = read_ip_addresses_from_json("ip_addresses.json")
-    if not ips:
+    data = read_ip_addresses_from_json("ip_addresses.json")
+
+    if not data:
         print("No IP addresses found in the JSON file.")
         exit(1)
 
     # Perform Nmap scan
     nm = nmap3.Nmap()
-    results = {}
-    for ip in ips:
-        result = nm.scan_top_ports(ip)
-        results[ip] = result[ip]['ports']
+    results = []
+    temp_res = {}
+    for v in data:
+        ip = v[0]
+        mac = v[1]
+        hostname = get_host_name(ip)
+        result = nm.scan_top_ports(ip) # NOT SCANNING ALL PORTS
+        # if result[ip]['ports']:
+        temp_res['ip'] = ip
+        temp_res['mac'] = mac
+        temp_res['hostname'] = hostname
+        temp_res['ports'] = result[ip]['ports']
+            
 
+        results.append(temp_res)
+        temp_res = {}
+            
+ 
     # Save scan results to output JSON file
     with open("output.json", 'w') as f:
         json.dump(results, f, indent=4)

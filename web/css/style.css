@@ -166,6 +166,7 @@ body {
   grid-template-columns: 30% 30% 30%;
   margin: auto;
   justify-content: center;
+  margin-top: -50px;
 }
 
 .endpoint-card {
@@ -175,6 +176,7 @@ body {
   font-family: 'Outfit';
   margin: 10px;
   padding: 10px;
+  min-height: 20rem;
 }
 
 .port-container {

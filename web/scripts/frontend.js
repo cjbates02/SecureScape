@@ -1308,7 +1308,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render endpoint page
   document.getElementById("endpoint-page-btn").addEventListener("click", () => {
     window.location.href = "endpoints.html";
-    
   });
 });
 
