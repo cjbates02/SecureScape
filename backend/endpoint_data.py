@@ -61,9 +61,11 @@ def getEndpointInformation():
         mac = get_if_hwaddr(conf.iface) # GET MAC ADDRESS
         hostname = platform.node() # GET HOST NAME
         os_version = platform.win32_ver()[0]# GET WINDOWS VERSION
-        os_status = subprocess.check_output(['powershell', 'Get-WindowsUpdate'])
+        os_status = subprocess.check_output(['powershell.exe', '-command', '(New-Object -ComObject Microsoft.Update.Session).CreateupdateSearcher().Search(“IsHidden=0 and IsInstalled=0”).Updates | Select-Object Title'])
+        print(os_status.decode())
         os_status = "Your device is up to date" in os_status.decode()
         ports = process_nmap_data(ip)
+        
 
     elif platform.system() == 'Linux':
         ip = get_if_addr(conf.iface) # GET IP ADDRESS

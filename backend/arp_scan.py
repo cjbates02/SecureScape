@@ -64,7 +64,8 @@ def arp_main():
     
     # Write the list of IP addresses to a JSON file
     with open("ip_addresses.json", "w") as f:
-        json.dump(devices_list, f)
+        json.dump(devices_list[:10], f) ### DEV PURPOSES COMMENT OUT ###
+        # json.dump(devices_list, f)
 
 if __name__ == '__main__':
     target_ip_range = get_local_ip_range()

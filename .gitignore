@@ -1,4 +1,4 @@
-node_modules/
+node_modules/           
 lib/
 include/
 bin/
@@ -9,4 +9,7 @@ Include/
 Scripts/
 Share/
 testing/
+share/
+data.csv
+
 
