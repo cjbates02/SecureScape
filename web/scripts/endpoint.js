@@ -96,6 +96,8 @@ const renderEndpointData = (endpoints, index) => {
     document.getElementById("load-less-end").disabled = false;
   }
 
+  console.log(typeof(endpoints[0]))
+
   for (i = index; i < limit; i++) {
     const currentEndpoint = endpoints[i];
 
