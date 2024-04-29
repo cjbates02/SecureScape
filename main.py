@@ -11,13 +11,24 @@ import tracemalloc
 # Enable tracemalloc
 tracemalloc.start()
 
-from backend import cvescraper, nmap_scan, arp_scan
+from backend import cvescraper, nmap_scan, arp_scan, endpoint_data, health_scan
 
 
 eel.init('web')
 
 
 """ BEGIN BACKEND FUNCTIONALITY HERE """
+
+
+@eel.expose
+def health_report(ports):
+    report = health_scan.analyze_host(ports)
+    return json.dumps(report)
+
+@eel.expose
+def get_device_data():
+    device_data = endpoint_data.getEndpointInformation()
+    return device_data
 
 # Update vulnerbility CSV file periodically
 # Read the csv file and pass values to javaScript function

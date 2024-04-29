@@ -1,0 +1,572 @@
+[
+    {
+        "ip": "137.142.167.0",
+        "mac": "0a:c9:67:69:58:fa",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.15",
+        "mac": "7c:27:bc:19:14:b8",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.10",
+        "mac": "9a:c1:e6:91:41:3c",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.5",
+        "mac": "0a:1e:87:49:c4:60",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.9",
+        "mac": "36:4e:ba:6f:45:71",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.18",
+        "mac": "fa:b6:e5:42:28:06",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.26",
+        "mac": "8e:8a:5e:1e:0d:62",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.30",
+        "mac": "8c:49:62:6c:d6:a4",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.31",
+        "mac": "38:c8:04:70:02:f8",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    },
+    {
+        "ip": "137.142.167.42",
+        "mac": "e0:9d:13:31:61:ee",
+        "hostname": "Hostname not found",
+        "ports": {
+            "21": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "22": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "23": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "25": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "80": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "110": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "139": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "443": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "445": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            },
+            "3389": {
+                "health": "Warning",
+                "description": "Port is closed which may indicate a lack of service running.",
+                "threat": "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access."
+            }
+        }
+    }
+]

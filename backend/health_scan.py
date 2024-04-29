@@ -2,7 +2,7 @@ import json
 
 # Health report if statements
 def analyze_port(port):
-    state = port["state"]
+    state = port[2]
     if state == "open":
         port_health = "Warning"
         port_description = "Port is open and accessible."
@@ -21,23 +21,23 @@ def analyze_port(port):
         threat = "An unknown port state could indicate potential issues with network scanning or misconfiguration. Further investigation is required to determine the cause."
 
     return {
+        "port number": port[1],
         "health": port_health,
         "description": port_description,
         "threat": threat
     }
 
 # goes through all the hosts
-def analyze_host(host):
+def analyze_host(ports):
     ports_analysis = {}
-    for port in host["ports"]:
-        port_id = port["portid"]
+    for port in ports:
+        port_id = port[0]
         ports_analysis[port_id] = analyze_port(port)
 
     return ports_analysis
 
 def main():
     input_file = "output.json"
-    output_file = "output_analysis.json"
 
     with open(input_file, "r") as f:
         data = json.load(f)
@@ -52,10 +52,6 @@ def main():
         }
         analysis.append(host_analysis)
 
-    with open(output_file, "w") as f:
-        json.dump(analysis, f, indent=4)
+    
+    return json.dumps(analysis, f, indent=4)
 
-    print("Report completed and saved to", output_file)
-
-if __name__ == "__main__":
-    main()

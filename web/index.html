@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content=" height=device-height width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="/eel.js"></script>
     <script src="scripts/frontend.js" defer></script>
-    <script src="scripts/index.js" defer></script>
+    <!-- <script src="scripts/index.js" defer></script> -->
+    <script src="scripts/vis-network.js" defer></script>
+    <script src="scripts/network_diagram.js" defer></script>
     <script src="scripts/endpoint.js" defer></script>
     <script src="scripts/d3/d3.js" defer></script>
     <script src="scripts/d3/d3-force.js" defer></script>
@@ -39,6 +41,9 @@
           </div>
           <div class="menu-item" id="endpoint-page-btn">
             <p>Endpoints</p>
+          </div>
+          <div class="menu-item" id="endpoint-data-btn">
+            <p>Device Data</p>
           </div>
         </div>
       </section>
@@ -69,9 +74,10 @@
               <input class="pw-input" type="password" id="sudo-pw" />
               <button class="button-general" id="root-submit">Submit</button>
             </div>
-            <div class="network-diagram-div">
+            <!-- <div class="network-diagram-div">
               <svg class="network-diagram" id="network-diagram"></svg>
-            </div>
+            </div> -->
+            <div class="diagram-container" id="network-diagram"></div>
           </div>
         </div>
       </section>

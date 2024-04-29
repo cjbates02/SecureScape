@@ -1309,6 +1309,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("endpoint-page-btn").addEventListener("click", () => {
     window.location.href = "endpoints.html";
   });
+
+  document.getElementById("endpoint-data-btn").addEventListener("click", () => {
+    window.location.href = "endpoint_data.html";
+  })
 });
 
 /** EEL BACKEND FUNCTIONS */

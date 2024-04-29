@@ -82,7 +82,7 @@ def getEndpointInformation():
         return 'Unsupported Operating System.'
 
     endpoint_data = buildEndpointData(ip, mac, hostname, os_version, os_status, ports)
-    print(json.dumps(endpoint_data, indent=4))
+    # print(json.dumps(endpoint_data, indent=4))
     return json.dumps(endpoint_data, indent=4)
     
 

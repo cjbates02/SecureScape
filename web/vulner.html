@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content=" height=device-height width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,6 +40,9 @@
           <div class="menu-item" id="endpoint-page-btn">
             <p>Endpoints</p>
           </div>
+          <div class="menu-item" id="endpoint-data-btn">
+            <p>Device Data</p>
+          </div>
         </div>
       </section>
 
@@ -59,6 +62,31 @@
               <div class="vulnerability-attribute">CVE ID</div>
               <div class="vulnerability-attribute">Name</div>
               <div class="vulnerability-attribute">Date Added</div>
+            </div>
+            <!-- Modal to display more information about vulnerability -->
+            <div id="vulner-modal" class="vulner-modal">
+              <img id="close-modal" class="modal-close" src="./img/close.png" />
+              <div class="modal-vulner-content">
+                <p class="has-text-centered has-text-weight-bold" id="id"></p>
+                <p class="has-text-centered" id="vulner-name"></p>
+                <br />
+                <div class="start-due">
+                  <label class="has-text-weight-bold">Date Added:</label>
+                  <label class="has-text-weight-bold">Due Date:</label>
+                  <p id="date-added"></p>
+                  <p id="due-date"></p>
+                  <label class="has-text-weight-bold">Ransomware:</label>
+                  <label class="has-text-weight-bold">Product:</label>
+                  <p id="known-rans"></p>
+                  <p id="product" class="has-text-centered"></p>
+                </div>
+                <br />
+                <p class="has-text-weight-bold has-text-centered">Description:</p>
+                <p id="desc"></p>
+                <br />
+                <p class="has-text-weight-bold has-text-centered">Required Action:</p>
+                <p id="required-action"></p>
+              </div>
             </div>
             <!-- Render vulnerbility attributes in JS file -->
             <div

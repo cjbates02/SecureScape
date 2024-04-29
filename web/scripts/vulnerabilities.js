@@ -5,9 +5,10 @@ if (document.getElementById("vulnerability-page")) {
     if (localStorage.getItem("storedEndpoints") !== null) {
       let vulners = JSON.parse(localStorage.getItem("vulners"));
       renderVulnerbilities(vulners, currentIndex);
+      renderModal();
     }
   });
-  
+
   // Refreshes vulnerbilities
   document.getElementById("vulner-test").addEventListener("click", async () => {
     document.getElementById("load-more-vulner").disabled = false;
@@ -15,6 +16,7 @@ if (document.getElementById("vulnerability-page")) {
       vulners = await getVulnerbilities();
       localStorage.setItem("vulners", JSON.stringify(vulners));
       renderVulnerbilities(vulners, currentIndex);
+      renderModal();
       if (vulners.length > 10) {
         document.getElementById("load-more-vulner").disabled = false;
       }
@@ -32,6 +34,7 @@ if (document.getElementById("vulnerability-page")) {
     vulners = JSON.parse(localStorage.getItem("vulners"));
     currentIndex = currentIndex + 10;
     renderVulnerbilities(vulners, currentIndex);
+    renderModal();
   });
 
   // Renders previous 10 vulnerbilities
@@ -39,6 +42,7 @@ if (document.getElementById("vulnerability-page")) {
     vulners = JSON.parse(localStorage.getItem("vulners"));
     currentIndex = currentIndex - 10;
     renderVulnerbilities(vulners, currentIndex);
+    renderModal();
   });
 }
 
@@ -46,6 +50,7 @@ if (document.getElementById("vulnerability-page")) {
 const getVulnerbilities = async () => {
   const jsonVulnerbilities = await eel.get_vulnerbility_data()(); // call python function to retrieve vulnerbility data
   const parsedVulner = JSON.parse(jsonVulnerbilities); // converts string to JS object
+  console.log(parsedVulner);
   return parsedVulner;
 };
 
@@ -74,8 +79,9 @@ const renderVulnerbilities = (vulnerbilities, index) => {
     const currentVuln = vulnerbilities[i];
 
     const idDiv = document.createElement("div");
-    idDiv.className = "vulnerability-attribute";
+    idDiv.className = "vulnerability-attribute cve-id";
     idDiv.innerHTML = `<div>${currentVuln.cveID}</div>`;
+    idDiv.value = JSON.stringify(currentVuln);
 
     const nameDiv = document.createElement("div");
     nameDiv.className = "vulnerability-attribute";
@@ -89,4 +95,40 @@ const renderVulnerbilities = (vulnerbilities, index) => {
     vulnContainer.appendChild(nameDiv);
     vulnContainer.appendChild(dateDiv);
   }
+};
+
+const renderModal = () => {
+  vulnerModal = document.getElementById("vulner-modal");
+  closeBtn = document.getElementById("close-modal");
+  vulnerElements = document.querySelectorAll(".cve-id");
+
+  closeBtn.addEventListener("click", () => {
+    vulnerModal.style.display = "none";
+  });
+
+  vulnerElements.forEach((el) => {
+    el.addEventListener("click", () => {
+      vulner = JSON.parse(el.value);
+      console.log(vulner);
+      vulnerModal.style.display = "block";
+
+      id = document.getElementById('id');
+      vulnerName = document.getElementById('vulner-name');
+      dateAdded = document.getElementById('date-added');
+      dueDate = document.getElementById('due-date');
+      knownRans = document.getElementById('known-rans');
+      product = document.getElementById('product');
+      requiredAction = document.getElementById('required-action');
+      desc = document.getElementById('desc');
+
+      id.innerHTML = vulner.cveID;
+      vulnerName.innerHTML = vulner.vulnerabilityName;
+      dateAdded.innerHTML = vulner.dateAdded;
+      dueDate.innerHTML = vulner.dueDate;
+      knownRans.innerHTML = vulner.knownRansomwareCampaignUse;
+      product.innerHTML = vulner.product;
+      requiredAction.innerHTML = vulner.requiredAction;
+      desc.innerHTML = vulner.shortDescription;
+    });
+  });
 };

@@ -19,25 +19,25 @@
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="/eel.js"></script>
     <script src="scripts/frontend.js" defer></script>
-    <script src="scripts/endpoint.js" defer></script>
+    <script src="scripts/device_data.js" defer></script>
     <title>SecureScape</title>
   </head>
-  <body id="endpoints-page">
+  <body id="main-page">
     <!-- Menu Starts Here -->
     <div class="home-page-grid">
       <section>
         <div class="menu">
-          <p id="home-page" class="menu-title is-size-4">
+          <div id="home-page" class="is-size-4 menu-title">
             <span class="secure">Secure</span>
             <span class="scape">Scape</span>
-          </p>
+          </div>
           <div class="menu-item" id="vulnerbility-page-btn">
             <p>Vulnerabilities</p>
           </div>
-          <div class="menu-item has-background-light" id="endpoint-page-btn">
+          <div class="menu-item" id="endpoint-page-btn">
             <p>Endpoints</p>
           </div>
-          <div class="menu-item" id="endpoint-data-btn">
+          <div class="menu-item has-background-light" id="endpoint-data-btn">
             <p>Device Data</p>
           </div>
         </div>
@@ -47,12 +47,8 @@
         <div class="home-network-grid">
           <div class="header-bar"></div>
           <div class="main-section">
-            <div class="button-div">
-              <button class="button-general" id="refresh-endpoints-btn">
-                Refresh Endpoints
-              </button>
-            </div>
             <!-- Loading icon that renders while network refresh is occuring -->
+            <br />
             <div class="loading-div">
               <img
                 class="loading-logo"
@@ -61,22 +57,24 @@
                 hidden
               />
             </div>
-            <!-- Conditionally prompts user to enter root password hidden on startup -->
-            <div class="root-pw-input-div" id="root-pw-form">
-              <img id="cancel-scan" class="close-icon" src="./img/close.png" />
-              <label class="label pw-label">Enter your root password:</label>
-              <input class="pw-input" type="password" id="sudo-pw" />
-              <button class="button-general" id="root-submit">Submit</button>
+            <div class="device-data-container" id="device-data-container">
+              <p class="device-information-title">Device Information:</p>
+              <div class="has-background-light device-information-body">
+                <p id="ip"></p>
+                <p id="mac"></p>
+                <p id="hostname"></p>
+                <p id="os_status"></p>
+              </div>
+              <br />
+              <p class="device-information-title">Device's Open Ports: </p>
+              <div class=" device-port-information" id="device-data-ports">
+                <p><strong>Service Name</strong></p>
+                <p class="has-text-centered"><strong>Port Number</strong></p>
+                <p class="has-text-right"><strong>Status</strong></p>
+              </div>
             </div>
-
-            <!-- Endpoint card -->
-            <div class="endpoint-container" id="endpoint-container">
-              <!-- Header for endpoint card -->
-              <!-- Port information -->
-            </div>
-            <div class="button-div">
-              <button id="load-less-end" class="button-general" disabled>Go Back</button>
-              <button id="load-more-end" class="button-general" disabled>Next</button>
+            <div class="network-diagram-div">
+              <svg class="network-diagram" id="network-diagram"></svg>
             </div>
           </div>
         </div>
