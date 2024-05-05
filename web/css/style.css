@@ -19,7 +19,7 @@
   grid-template-columns: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 8% 8% 8%;
+  grid-template-rows: 8% 8% 8% 8%;
   padding-top: 75px;
 }
 
@@ -46,8 +46,11 @@
 
 .main-section {
   background-color: #1E3A6E;
-  height: 100vh; 
+  height: 100%; 
   grid-template-columns: 100%;
+  position: fixed;
+  width: 75%;
+  overflow: auto;
 }
 
 .menu-title {
@@ -168,6 +171,7 @@ body {
   grid-template-columns: 30% 30% 30%;
   margin: auto;
   justify-content: center;
+  margin-top: -40px;
 }
 
 .endpoint-card {
@@ -177,7 +181,9 @@ body {
   font-family: 'Outfit';
   margin: 10px;
   padding: 10px;
-  min-height: 20rem;
+  /* min-height: 20rem; */
+  height: 19.5rem;
+  /* overflow: auto; */
 }
 
 .port-container {
@@ -278,9 +284,144 @@ body {
 }
 
 .diagram-container {
-  width: 80%;
-  height: 80%;
+  width: 75%;
+  height: 75%;
   background-color: rgba(240, 240, 240, 0.4);
   margin: auto;
   padding: 15px;
+  margin-top: -15px;
+}
+
+.login-body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1E3A6E;
+}
+
+.login-div {
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  background-color: #161C3C;
+  width: 40%;
+  height: 300px;
+  padding: 40px;
+  margin-top: 20%;
+  border-radius: 15px;
+  color: hsl(0, 0%, 96%);
+  font-family: 'Outfit';
+  place-items: center;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%);
+}
+
+.profile-div {
+  margin-top: auto;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.profile-grid {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 50% 50%;
+  place-items: center;
+  padding-top: 100px;
+  color: hsl(0, 0%, 96%);
+  font-family: 'Outfit';
+}
+
+.logout-container {
+  display: grid;
+  margin: auto;
+  place-items: center;
+  padding-top: 100px;
+}
+
+.login-grid-item {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.node-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 30%;
+  height: 50%;
+  overflow: auto;
+  background-color: #161C3C;
+  margin-top: -600px;
+  margin-left: 22%;
+  place-self: center;
+  border-radius: 20px;
+  font-family: 'Outfit';
+  overflow: auto;
+}
+
+.node-modal-content {
+  background-color: hsl(0, 0%, 90%);
+  margin: 12% auto;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid grey;
+  overflow: auto;
+}
+
+.node-port-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.node-modal-header {
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+.refresh-data-btn {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  font-family: 'Outfit';
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  /* Ensure parent div can contain the tooltip content */
+  overflow: visible; /* Allow content to overflow outside the parent div */
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  /* Position the tooltip outside of its parent div */
+  top: -80%;
+  left: -60%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

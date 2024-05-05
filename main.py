@@ -8,6 +8,7 @@ import subprocess
 import asyncio
 import tracemalloc
 
+
 # Enable tracemalloc
 tracemalloc.start()
 
@@ -91,7 +92,7 @@ def get_endpoints_data(password):
 
 
 if platform.system() == 'Windows':
-    eel.browsers.set_path('electron', 'node_modules\electron\dist\electron.exe')
+    eel.browsers.set_path('electron', 'node_modules\\electron\\dist\\electron.exe')
 else:
     eel.browsers.set_path('electron', 'node_modules/.bin/electron')
 

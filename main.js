@@ -13,7 +13,7 @@ const createWindow = () => {
     },
   });
 
-  win.loadURL("http://localhost:8000/index.html");
+  win.loadURL("http://localhost:8000/login.html");
 };
 
 // listens to the event that an app is loaded, then it fires the create window function

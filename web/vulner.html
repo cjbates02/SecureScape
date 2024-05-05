@@ -22,7 +22,7 @@
     <script src="scripts/vulnerabilities.js" defer></script>
     <title>SecureScape</title>
   </head>
-  <body id="vulnerability-page">
+  <body id="vulnerability-page" style="height: 100vh;">
     <!-- Menu Starts Here -->
     <div class="home-page-grid">
       <section>
@@ -43,6 +43,12 @@
           <div class="menu-item" id="endpoint-data-btn">
             <p>Device Data</p>
           </div>
+          <div class="menu-item" id="report-btn">
+            <p>Generate Report</p>
+          </div>
+          <div class="profile-div">
+            <img id="profile" class="profile-image" src="img/profile.png"/>
+          </div>
         </div>
       </section>
 
@@ -58,10 +64,12 @@
               </button>
             </div>
             <!-- Headers for vulnerbility grid -->
-            <div class="vulnerability-header has-background-light">
-              <div class="vulnerability-attribute">CVE ID</div>
-              <div class="vulnerability-attribute">Name</div>
-              <div class="vulnerability-attribute">Date Added</div>
+            <div>
+              <div class="vulnerability-header has-background-light">
+                <div class="vulnerability-attribute">CVE ID</div>
+                <div class="vulnerability-attribute">Name</div>
+                <div class="vulnerability-attribute">Date Added</div>
+              </div>
             </div>
             <!-- Modal to display more information about vulnerability -->
             <div id="vulner-modal" class="vulner-modal">

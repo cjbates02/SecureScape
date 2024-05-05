@@ -96,7 +96,7 @@ const renderEndpointData = (endpoints, index) => {
     document.getElementById("load-less-end").disabled = false;
   }
 
-  console.log(typeof(endpoints[0]))
+  console.log(typeof endpoints[0]);
 
   for (i = index; i < limit; i++) {
     const currentEndpoint = endpoints[i];
@@ -114,16 +114,19 @@ const renderEndpointData = (endpoints, index) => {
       const portElement = `
             <p>${portNumber}</p>
             <p>${serviceName}</p>
-            <p class="has-text-right">${state}</p>
+            <div class="tooltip has-text-right">
+              ${state}
+              <span class=tooltiptext>${getToolTipText(state)}</span>
+            </div>
         `;
       portElements += portElement;
     });
 
     const endpointElement = elementFromHtml(`
     <div class="endpoint-card">
-      <p class="has-text-centered">${ip}</p>
+      <p class="has-text-weight-bold has-text-centered">${ip}</p>
       <p class="has-text-centered">${mac}</p>
-      <div class="port-container">
+      <div class="port-container has-text-weight-medium">
         ${portElements}
       </div>
     </div>
@@ -131,7 +134,6 @@ const renderEndpointData = (endpoints, index) => {
 
     endpointContainer.appendChild(endpointElement);
     portElements = ``;
-
   }
 };
 
@@ -139,4 +141,16 @@ const elementFromHtml = (html) => {
   const template = document.createElement("template");
   template.innerHTML = html.trim();
   return template.content.firstElementChild;
+};
+
+const getToolTipText = (portState) => {
+  if (portState === "open") {
+    return "An open port can potentially expose the system to unauthorized access or exploitation if there are unsecured services running. Ensure only necessary services are exposed, and apply proper authentication, access control, and encryption measures.";
+  } else if (portState === "closed") {
+    return "While closed ports may not pose an immediate threat, they could still be subject to reconnaissance attempts by attackers. Ensure ports are properly monitored and closed ports do not inadvertently open to external access.";
+  } else if (portState === "filtered") {
+    return "Filtered ports may indicate the presence of a firewall or security appliance blocking access to the port. However, its essential to verify that the filtering is intentional and configured correctly to prevent bypassing security measures.";
+  } else {
+    return "An unknown port state could indicate potential issues with network scanning or misconfiguration. Further investigation is required to determine the cause.";
+  }
 };

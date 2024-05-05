@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content=" height=device-height width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="height=device-height width=device-width, initial-scale=1.0"
+    />
     <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,10 +22,11 @@
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="/eel.js"></script>
     <script src="scripts/frontend.js" defer></script>
-    <script src="scripts/device_data.js" defer></script>
+    <script src="scripts/report.js" defer></script>
+    <script src="scripts/jspdf.umd.min.js" defer></script>
     <title>SecureScape</title>
   </head>
-  <body id="main-page" style="height: 100vh;"">
+  <body id="main-page" style="height: 100vh">
     <!-- Menu Starts Here -->
     <div class="home-page-grid">
       <section>
@@ -37,14 +41,14 @@
           <div class="menu-item" id="endpoint-page-btn">
             <p>Endpoints</p>
           </div>
-          <div class="menu-item has-background-light" id="endpoint-data-btn">
+          <div class="menu-item" id="endpoint-data-btn">
             <p>Device Data</p>
           </div>
-          <div class="menu-item" id="report-btn">
+          <div class="menu-item has-background-light" id="report-btn">
             <p>Generate Report</p>
           </div>
           <div class="profile-div">
-            <img id="profile" class="profile-image" src="img/profile.png"/>
+            <img id="profile" class="profile-image" src="img/profile.png" />
           </div>
         </div>
       </section>
@@ -53,33 +57,11 @@
         <div class="home-network-grid">
           <div class="header-bar"></div>
           <div class="main-section">
-            <!-- Loading icon that renders while network refresh is occuring -->
-            <br />
-            <div class="loading-div">
-              <img
-                class="loading-logo"
-                id="loading-icon"
-                src="./img/loading-icon.svg"
-                hidden
-              />
+            <div class="refresh-data-btn">
+              <button class="button" style="font-family: 'Outfit'; margin-top: 20px;" id="generate-report-btn">
+                Create a report
+              </button>
             </div>
-            <div class="device-data-container" id="device-data-container">
-              <p class="device-information-title">Device Information:</p>
-              <div class="has-background-light device-information-body">
-                <p id="ip"></p>
-                <p id="mac"></p>
-                <p id="hostname"></p>
-                <p id="os_status"></p>
-              </div>
-              <br />
-              <p class="device-information-title">Device's Open Ports: </p>
-              <div class=" device-port-information" id="device-data-ports">
-                <p><strong>Service Name</strong></p>
-                <p class="has-text-centered"><strong>Port Number</strong></p>
-                <p class="has-text-right"><strong>Status</strong></p>
-              </div>
-            </div>
-            <div class="refresh-data-btn"><button style="font-family: 'Outfit';" class="button" id="refresh">Refresh Data</button></div>
           </div>
         </div>
       </section>
