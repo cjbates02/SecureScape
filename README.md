@@ -1,6 +1,6 @@
 # SecureScape: Desktop Application
 
-SecureScape is an Electron.js desktop application designed for network security professionals. It offers multiple features, including dynamic network diagram generation, a CVE report catalog, network and port discovery, and PDF report generation. This application is tailored for users seeking to enhance their network security assessments and reporting capabilities.
+SecureScape is an Electron.js desktop application designed for home use. It offers multiple features, including dynamic network diagram generation, a CVE report catalog, network and port discovery, and PDF report generation. This application is tailored for users seeking to enhance their network security assessments and reporting capabilities.
 
 ## Prerequisites
 
