@@ -1,17 +1,55 @@
--- Make sure you have node js and python installed
+# SecureScape: Desktop Application
 
--- Create a python virtual environemnt using command: python -m venv <name of venv>
+SecureScape is an Electron.js desktop application designed for network security professionals. It offers multiple features, including dynamic network diagram generation, a CVE report catalog, network and port discovery, and PDF report generation. This application is tailored for users seeking to enhance their network security assessments and reporting capabilities.
 
--- Inside the venv clone the repository: git clone -b master https://github.com/cjbates02/SecureScape.git
+## Prerequisites
 
--- Install node modules, use command: npm install
+Make sure you have Node.js and Python installed on your system.
 
--- Install python dependencies pip install -r requirements.txt
+## Installation Instructions
 
--- Eel has a bug with web sockets, to address after python dependencies have been installed navigate to lib/eel/__init__.py and change line import bottle.ext.websocket as wbs to import bottle_websocket as wbs
+1. **Create a Python Virtual Environment**:
+   ```bash
+   python -m venv <name_of_venv>
+   ```
 
--- To start up dev server run command: python main.py
+2. **Clone the Repository**:
+   Inside the virtual environment, clone the repository:
+   ```bash
+   git clone -b master https://github.com/cjbates02/SecureScape.git
+   ```
 
--- Not for commercial use
+3. **Install Node Modules**:
+   Navigate to the cloned directory and run:
+   ```bash
+   npm install
+   ```
 
--- If you recieve an nmap error, some windows machines require you to explicitely download nmap from nmap.org. After downloading ensure path variable for nmap is properly set.
+4. **Install Python Dependencies**:
+   Run the following command to install the required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Fix Eel WebSocket Bug**:
+   Eel has a known bug with web sockets. After installing the Python dependencies, navigate to `lib/eel/__init__.py` and change:
+   ```python
+   import bottle.ext.websocket as wbs
+   ```
+   to:
+   ```python
+   import bottle_websocket as wbs
+   ```
+
+6. **Start the Development Server**:
+   Run the application using:
+   ```bash
+   python main.py
+   ```
+
+## Important Notes
+
+- This application is not for commercial use.
+- If you encounter an Nmap error, ensure that Nmap is explicitly downloaded from [nmap.org](https://nmap.org) and that the path variable for Nmap is properly set on your Windows machine.
+
+SecureScape is designed to empower users in conducting thorough network security analyses while streamlining the reporting process.
